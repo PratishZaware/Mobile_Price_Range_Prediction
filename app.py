@@ -26,6 +26,14 @@ def predict_api():
     print(output[0])
     return jsonify(output1)
 
+@app.route('/predict',methods=['POST'])
+def predict():
+    data=[float(x) for x in request.form.values()]
+    new_data= np.array(data).reshape(1,-1)  
+    output=model.predict(new_data)  
+    return render_template("home.html",prediction_text="The mobile price range is {}".format(output))
+
+
 if __name__=="__main__":
     app.run(debug=True)    
     

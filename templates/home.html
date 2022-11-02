@@ -1,3 +1,54 @@
-<h1>
-    Hello World
-</h1>
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+    <h1>Price Range 0-low cost,1-medium cost,2-high cost,3-very High cost</h1>
+ <div class="login">
+	<h1>Mobile Range Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="battery_power" name="battery_power" placeholder="battery_power" required="required" /><br>
+    	<input type="blue" name="blue" placeholder="blue" required="required" /><br>
+        <input type="clock_speed" name="clock_speed" placeholder="clock_speed" required="required" /><br>
+        <input type="dual_sim" name="dual_sim" placeholder="dual_sim" required="required" /><br>
+        <input type="fc" name="fc" placeholder="fc" required="required" /><br>
+        <input type="four_g" name="four_g" placeholder="four_g" required="required" /><br>
+        <input type="int_memory" name="int_memory" placeholder="int_memory" required="required" /><br>
+        <input type="m_dep" name="m_dep" placeholder="m_dep" required="required" /><br>
+        <input type="mobile_wt" name="mobile_wt" placeholder="mobile_wt" required="required" /><br>
+        <input type="n_cores" name="n_cores" placeholder="n_cores" required="required" /><br>
+        <input type="pc" name="pc" placeholder="pc" required="pc" /><br>
+        <input type="px_height" name="px_height" placeholder="px_height" required="required" /><br>
+        <input type="px_width" name="px_width" placeholder="px_width" required="required" /><br>
+        <input type="ram" name="ram" placeholder="ram" required="required" /><br>
+        <input type="sc_h" name="sc_h" placeholder="sc_h" required="required" /><br>
+        <input type="sc_w" name="sc_w" placeholder="sc_w" required="sc_w" /><br>
+        <input type="talk_time" name="talk_time" placeholder="talk_time" required="required" /><br>
+        <input type="three_g" name="three_g" placeholder="three_g" required="required" /><br>
+        <input type="touch_screen" name="touch_screen" placeholder="touch_screen" required="required" /><br>
+        <input type="wifi" name="wifi" placeholder="wifi" required="required" /><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
